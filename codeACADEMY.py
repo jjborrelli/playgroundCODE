@@ -57,4 +57,4 @@ total = meal + meal * tip
 print("%.2f" % total)
 
 # Strings and Console Output
-
+brian = "Hello life!"

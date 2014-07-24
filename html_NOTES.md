@@ -21,9 +21,9 @@
 	- think of them like parentheses
 3. tags nest, so remember to close them in the correct order
 
-```
-<first><second> text </second></first>
-```
+
+		<first><second> text </second></first>
+
 
 
 ### The head and body  
@@ -95,16 +95,17 @@ In this case style is included in the `<p>` paragraph tag, and *font-size* is in
 Like with `font-size` we indicate the attribution (`color` in this case and then tell it what color we want after the colon. 
 
 To change both size and color a semicolon can be used to separate the two. 
-	```
+	
 	<h1 style="color:red;font-size:12px">Header<h1>
-	```
+	
 
 [A list of colors can be found by clicking here](http://www.w3.org/TR/css3-color/#svg-color)  
 
 **Font Family** can also be changed with the `style` attribute. 
-	```
+
+	
 	<h1 style="font-family: Arial">Arial Header<h1>
-	```
+	
   
 [A list of available fonts can be found by clicking here](http://www.w3.org/TR/CSS21/fonts.html#generic-font-families)
 
@@ -144,13 +145,101 @@ The `<strong></strong>` tag allows for **bold words and phrases** while the `<em
 
 `<div></div>` is one of the most versatile structure tags. It allows you to divide your page into containers. 
 
-	```
+	
 	<div style = "width:50px; height:50px; background-color:green"></div>
-	```
+	
 
-`<span></span>` allows for finer scale control
-	```
-	<p> This text is one color while <span style="color:red">this text is another</span></p>
-	```
+`<span></span>` allows for finer scale control  
 
-Can be used with a variety of attributes
+
+	<p>This text is one color while <span style="color:red">this text is another</span></p>
+	
+
+Can be used with a variety of attributes  
+  
+## CSS An Overview  
+Two reasons to separate formatting (CSS) from content (HTML)  
+1. apply the same formatting to several HTML elements without rewriting the code  
+2. Apply similar appearance and formatting to several HTML pages from a single CSS file  
+
+Two ways to apply CSS in one place
+1. put the CSS between `<style></style>` tags in the same file as HTML
+	- inside of the `<head></head>` tags
+2. use a `<link>` tag in the `<head></head>`
+	- needs a `type` attribute equal to `"text/css"`
+	- needs a `rel` attribute equal to `"stylesheet"`
+	- needs a `href` attribute that should point to the web address of the CSS file
+
+
+	<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+
+
+### Syntax
+The general format:
+
+
+	selector {  
+		property: value;  
+	}
+
+
+Where the *selector* is any HTML element without the `<>`, the *property* is then the aspect of the selector (e.g., color, font-family, font-size, etc.), and the *value* is the setting for the property (e.g., red, Arial, 44px). Separate each property within a selector by a semicolon.
+
+CSS **comments** are of a slightly different form than HTML comments:  
+
+		
+	/*A CSS comment*/
+
+
+### Overview
+To get a variety of different colors, use hexadecimal keys, search 'hex color palette' or 'hex color picker' for many options. These always start with a `#`, are up to 6 digits long, and are case-insensitive
+
+`em` is a unit of relative size. A single `em` is whatever the default font size is of whatever screen is viewing it
+
+#### Fonts 
+Basic fonts of CSS:  
+
+1. serif - font with little decorative bits on the ends of letter strokes  
+2. sans-serif - plain looking font  
+3. cursive - scripty font that looks like cursive writing   
+
+You can provide a list of fonts to try
+
+
+	p {
+	   font-family: Tahoma, Verdana, sans-serif;
+	}
+
+
+In the above example the CSS will try Tahoma first, then Verdana, before going to the sans-serif font.
+
+## Selecting HTML Elements  
+
+Many HTML elements support the `border` property  
+For example:
+
+	td{
+    	border: 1px dashed blue
+	}	
+	table{
+   		border: 1px solid black
+	}
+
+sets a dashed blue border around the cells, and a solid black border around the whole table.
+
+Links can be changed much like regular text. They also have the property of `text-decoration` to give them a bit more flair. 
+
+	a {
+    	color:cc0000;
+
+		/*To prevent underlined links using text-decoration*/
+
+    	text-decoration:none
+	}  
+
+*sidenote: the `</br>` tag inserts a line break*  
+
+Some CSS attributes of div; creating a button
+
+`margin:auto` tells the HTML to give equal margins to either side of the element
+`text-align:center` centers text elements

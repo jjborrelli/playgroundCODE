@@ -114,3 +114,43 @@ To change both size and color a semicolon can be used to separate the two.
 
 The `<strong></strong>` tag allows for **bold words and phrases** while the `<em></em>` tag allows for *italicized words and phrases*  
 
+## HTML Basics III  
+- Tables
+	- store tabular data
+	- uses `<table>` tag (with many others
+	- `border` attribute draws border around the table: `<table border="1px">
+		- `<table style="border-collapse:collapse"> 
+- Rows
+	- use `<tr>` to create table row
+- Data
+	- `<td>` tags define the data in the row
+	- think of `<td>` tags like the `<li>` tags in a list
+		- add multiple `<td>` to each row to generate columns
+- Head 
+	- `<thead>` info about the table
+		- goes inside `<table>`
+		- Start with opening `<thead>`
+		- Then opening `<tr>` for row
+		- The column heading is then contained within `<th></th>`
+		- Close row and header with `</tr> and `</thead>`
+	- `<tbody>` contains actual tabular data
+		- goes inside `<table>`
+		- surrounds the `<tr>` and `<td>` tags that have the data
+- Title
+	- requires *colspan* attribute of `<th>` tag
+	- `<th colspan="3">3 columns across</th>`
+
+#### Structure Tags
+
+`<div></div>` is one of the most versatile structure tags. It allows you to divide your page into containers. 
+
+	```
+	<div style = "width:50px; height:50px; background-color:green"></div>
+	```
+
+`<span></span>` allows for finer scale control
+	```
+	<p> This text is one color while <span style="color:red">this text is another</span></p>
+	```
+
+Can be used with a variety of attributes

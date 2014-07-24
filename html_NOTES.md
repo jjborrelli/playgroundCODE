@@ -1,6 +1,6 @@
 # Learning HTML with Codecademy
 
-## HTML Basics
+## HTML Basics I
 **HTML** = HyperText Markup Language   
 
 -where *hypertext* is just "text with links in it"  
@@ -60,3 +60,57 @@ So the `/` just goes at the end of the tag, but put a space between the url in q
 
 **Make the image a link**  
 Just place the `<img src="url" />` tag in between the `<a href="link"></a>` tags
+
+
+## HTML Basics II
+
+**Ordered lists** = numbered list
+1. starts with `<ol>`
+2. each individual list item is bracketed by `<li></li>` tags
+3. ends with `</ol>`
+
+**Unordered lists** = list with bullet points
+- same as *ordered list* but uses `<ul></ul>` tags  
+- also uses `<li></li>` tags for each list item	  
+
+#### Inline CSS:
+**Comments** start with `<!--` and end with `-->`  
+So a comment would be:  
+	```
+	<!-- This is my example comment-->
+	```  
+
+We can give tags more instructions by including *attributes* in the opening tag. The `src` in `<img>` and the `href` in `<a>` are both attributes. 
+
+**Font Size** is changed with the *style* attribute. 
+	```
+	<p style="font-size: 12px">
+	```  
+In this case style is included in the `<p>` paragraph tag, and *font-size* is indicated in quotes, followed by a colon and the size indicated in *px* (pixels). 
+
+**Font Color** is also changed with the `style` attribute. `style` can be used in many different tags. For example, we can change the color of a heading:
+	```
+	<h1 style="color:red">Red Header<h1>
+	```
+Like with `font-size` we indicate the attribution (`color` in this case and then tell it what color we want after the colon. 
+
+To change both size and color a semicolon can be used to separate the two. 
+	```
+	<h1 style="color:red;font-size:12px">Header<h1>
+	```
+
+[A list of colors can be found by clicking here](http://www.w3.org/TR/css3-color/#svg-color)  
+
+**Font Family** can also be changed with the `style` attribute. 
+	```
+	<h1 style="font-family: Arial">Arial Header<h1>
+	```
+  
+[A list of available fonts can be found by clicking here](http://www.w3.org/TR/CSS21/fonts.html#generic-font-families)
+
+**Background color** is yet another `style` option, where you set, for example, `style="background-color:red"`
+
+*Style* also allows us to **align text** using `style="text-align:center"`
+
+The `<strong></strong>` tag allows for **bold words and phrases** while the `<em></em>` tag allows for *italicized words and phrases*  
+

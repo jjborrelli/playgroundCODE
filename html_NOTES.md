@@ -27,7 +27,7 @@
 
 
 ### The head and body  
-Everything in the html document goes between the `<html></html>` tags, except the `<DOCTYPE html>` tag
+Everything in the html document goes between the `<html></html>` tags, except the `<!DOCTYPE html>` tag
 
 There are always two parts to an html file
 1. the head

@@ -243,3 +243,135 @@ Some CSS attributes of div; creating a button
 
 `margin:auto` tells the HTML to give equal margins to either side of the element
 `text-align:center` centers text elements
+
+
+# CSS Classes and IDs  
+## CSS Selectors  
+
+Any HTML element my be a CSS selector (e.g., h1 for `<h1></h1>`). 
+
+If you want to select a particular tag, rather than all tags by selecting an ordered set of tags. For example, to select only the `<p></p>` tag within a nested set of `<div></div>` tags:
+
+```
+	<div>
+		<div>
+			<p>
+				Selecting this line
+			</p>
+		</div>
+	</div>
+	<p> 
+		And not this one
+	</p>
+```
+
+Would require the css: 
+
+```
+	div div p{
+		/*CSS things*/
+	}
+```
+
+Apply CSS styling to *every* element of the page
+
+```
+	*{
+		/*selector of everything*/
+	}
+```
+
+
+### Branching
+
+Thinking of HTML elements like a tree; elements "branch out" from the main trunk (`<html></html>` tags). The first two big branches are `<head>` and `<body>` and the branches multiply and become finer as you move down elements. 
+
+```
+	<!DOCTYPE html>
+	<html> <!--The trunk of the tree!-->
+		<head> <!--Child of html, parent of title,
+			   sibling of body-->
+			<title></title> <!--Immediate child of head,
+							child of head AND html-->
+		</head>
+		<body> <!--Child of html, parent of p,
+			   sibling of head-->
+			<p></p> <!--Immediate child of body,
+					child of body AND html-->
+		</body>
+	</html>
+```
+
+Above is a diagram of the "familial" relationships of the tags. An element is a child of every element wrapped around it.   
+
+Using `div div p {/* some CSS */}1` will grab any p that is nested within a div somewhere that is also nested around another div. 
+
+To select a p that is directly nested within another element use: `div > p { /* some CSS */}  
+
+Some selectors will override others if they have greater specificity. For example: `ul li p{/*CSS*/}` will override `p{/*CSS*/}`  
+
+Two selectors are more specific than nested selectors: **classes** and **ids**. 
+
+#### Class example: 
+
+Good for assigning the same characteristics to several different tag types.
+
+```
+	<div class="classname"></div>
+```
+
+With the associated CSS
+
+```
+	.classname{/*CSS*/}
+```
+Note the leading *period* in front of whatever the class is called. 
+
+#### Id example: 
+
+Good for assigning styling to exactly one element.
+
+```
+	<div id="idname"></div>
+```
+
+With the associated CSS
+
+```
+	#idname{/*CSS*/}
+```  
+
+### Pseudo-class selector  
+
+A way of accessing HTML items that aren't part of the document tree. Pseudo selectors can control the appearance of unvisited vs visited links, even links that are being hovered over. Used as: 
+
+```
+	selector:pseudo-class_selector {
+    	property: value;
+	}
+```
+*(Simply the extra colon ":")*
+
+#### Links  
+
+Pseudo-class selectors for links  
+- `a:link`: an unvisited link  
+- `a:visited`: a visited link  
+- `a:hover`: a link you are hovering a mouse over 
+
+ 
+#### First child
+
+The `first-child` selector is useful to apply styling only to elements that are first children of their parents. 
+
+Can select any level of "child" with a pseudo-class selector.  
+
+```
+	p:nth-child(number.of.child){
+		/*CSS*/
+	}
+```
+
+Changes the number.of.child level child with CSS styling.
+
+ 

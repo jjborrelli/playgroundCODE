@@ -375,3 +375,48 @@ Can select any level of "child" with a pseudo-class selector.
 Changes the number.of.child level child with CSS styling.
 
  
+# CSS Positioning  
+## CSS box model  
+
+Each HTML element is like a tiny box or container that holds the pictures and text you specify
+
+<img src="http://s3.amazonaws.com/codecademy-blog/assets/ae09140c.png"/>
+
+### Display
+
+1. block
+	- element is a block box, takes width of page
+2. inline-block
+	- element is a block box, but allows other elements to sit next to it  
+3. inline
+	- element sits on the same line as another element, but without formatting it like a block (only takes as much width as it needs  
+4. none
+	- element and content disappears entirely  
+
+### Box Layers  
+
+1. margin - space around the element; the larger the margin the more space between the element and those around it
+	- adjust the margin to move our HTML elements closer to or farther from each other
+
+	```
+	margin: top right bottom left
+	```
+2. border - edge of the element  
+3. padding - spacing between content and border
+	- moves border closer or further from the content  
+
+	```
+	padding: top right bottom left
+	```
+4. content - actual stuff in the box 
+
+
+### Floats  
+
+Tells HTML where to set the element
+
+`clear` tells the element to get out of the way of the other elements  
+
+if you don't specify and element's position it defaults to `static`  
+
+`position` can be absolute, relative, or fixed  

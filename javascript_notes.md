@@ -212,5 +212,56 @@ Variables defined *inside* a function are **local** variables, they cannot be ac
 The `var` keyword defines variables in the current scope (local if called within a function, global if outside). If a variable is assigned without the var keyword it will have global scope, such that a variable defined inside a function without var will be accessible from outside the function.  
 
 
+## Rock, Paper, Scissors
+- User makes a choice
+- Computer makes a choice
+- A compare function will determine who wins
 
+Start by asking the user to choose rock, paper, or scissors.
 
+```
+var userChoice = prompt("Do you choose rock, paper, or scissors?");
+```
+
+Sidenote: useful function is `Math.random()` which will give out a random number between 0 and 1.  
+
+```
+var userChoice = prompt("Do you choose rock, paper or scissors?");
+var computerChoice = Math.random();
+if (computerChoice < 0.34) {
+	computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+	computerChoice = "paper";
+} else {
+	computerChoice = "scissors";
+} console.log("Computer: " + computerChoice);
+
+var compare = function(choice1, choice2){
+    if(choice1 === choice2) {
+        return "The result is a tie!";
+    }
+    else if(choice1 === "rock") {
+        if(choice2 === "scissors") {
+            return "rock wins";
+        }else{
+            return "paper wins";
+        }
+    }
+    else if(choice1 === "paper") {
+        if(choice2 === "rock") {
+            return "paper wins";
+        }else{
+            return "scissors wins";
+        }
+    }
+    else if(choice1 === "scissors") {
+        if(choice2 === "paper") {
+            return "scissors wins"
+        }else{
+            return "rock wins"
+        }
+    }
+};
+
+compare(userChoice, computerChoice)
+```
